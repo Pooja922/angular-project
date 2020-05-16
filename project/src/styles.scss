@@ -7,5 +7,10 @@ body {
     font-family: Roboto,sans-serif;
 }
 .container {
-    margin:20px;
+    margin: 20px;
+    display:flex;
+}
+
+h2,h3{
+    color:red;
 }
