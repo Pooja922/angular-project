@@ -50,7 +50,11 @@
                     </mat-list>
                 </mat-list>
             </div>
-            <p>{{ commentForm.value | json }} {{ commentForm.status | json }}</p>
+            <mat-list-item *ngIf="(commentForm.dirty&&commentForm.valid)">
+                <p>{{commentForm.value.comment}}</p>
+                <p>{{commentForm.value.rating}} Stars</p>
+                <p>-- {{commentForm.value.author}}</p>
+            </mat-list-item>
         </mat-card><br><br>
         <mat-card>
         <div fxFlex fxFlexOffset="20px" class="form-size">
@@ -64,10 +68,11 @@
               </p>
               <p>
                 <mat-slider
+                formControlName="rating"
                 thumbLabel
                 tickInterval="1"
                 min="1"
-                max="5" value="5"></mat-slider>
+                max="5" value="5" ></mat-slider>
               </p>
               <mat-form-field class="full-width">
                 <textarea matInput formControlName="comment" placeholder="Your Comment" required></textarea>

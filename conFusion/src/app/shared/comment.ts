@@ -5,4 +5,3 @@ export class Comment {
     author: string;
     date: string;
 }
-export const CommentType = ['Author', 'Rating', 'Cmnt'];
