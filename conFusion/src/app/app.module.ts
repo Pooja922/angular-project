@@ -33,6 +33,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
+import { HttpModule } from '@angular/http';
 
 
 
@@ -68,12 +71,16 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     MatSliderModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpModule 
   ],
-  providers: [DishService,PromotionService,LeaderService],
   entryComponents: [
     LoginComponent
+    
 ],
+  providers: [DishService,PromotionService,LeaderService,{provide: 'BaseURL', useValue: baseURL}],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
