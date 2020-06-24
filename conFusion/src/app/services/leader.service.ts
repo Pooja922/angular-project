@@ -15,7 +15,7 @@ export class LeaderService {
     private processHTTPMsgService: ProcessHTTPMsgService) { }
 
   getLeaders(): Observable<Leader[]> {
-    return this.http.get<Leader[]>(baseURL + 'leaders')
+    return this.http.get<Leader[]>(baseURL + 'leaderss')
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
