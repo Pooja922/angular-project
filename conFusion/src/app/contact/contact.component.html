@@ -61,6 +61,25 @@
         <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
       </mat-form-field>
     </p>
+    <p>
+      
+      <mat-slide-toggle formControlName="agree">May we contact you?</mat-slide-toggle>
+      
+    
+      <mat-form-field class="how-width " >
+        <mat-select placeholder="How?" formControlName="contacttype">
+          <mat-option *ngFor="let ctype of contactType" [value]="ctype">
+            {{ ctype }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="half-width">
+          <textarea matInput formControlName="message" placeholder="Your Feedback" type="email" ></textarea>
+          
+      </mat-form-field>
+  </p>
     <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
   </form>
 </div>

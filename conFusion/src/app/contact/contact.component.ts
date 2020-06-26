@@ -28,6 +28,7 @@ export class ContactComponent implements OnInit {
     'lastname': '',
     'telnum': '',
     'email': ''
+    
   };
 
   validationMessages = {
@@ -48,7 +49,7 @@ export class ContactComponent implements OnInit {
     'email': {
       'required':      'Email is required.',
       'email':         'Email not in valid format.'
-    },
+    }
   };
 
   constructor( private feedbackservice: FeedbackService,private fb: FormBuilder) {
@@ -66,7 +67,7 @@ export class ContactComponent implements OnInit {
       email: ['', [Validators.required, Validators.email] ],
       agree: false,
       contacttype: 'None',
-      message: ''
+      message:  ''
     });
     this.feedbackForm.valueChanges
       .subscribe(data => this.onValueChanged(data));
