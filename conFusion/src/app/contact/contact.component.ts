@@ -3,6 +3,7 @@ import { Feedback, ContactType } from '../shared/feedback';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { flyInOut, expand } from '../animations/app.animation';
 import { FeedbackService } from '../services/feedback.service';
+import { visibility } from '../animations/app.animation';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,7 @@ import { FeedbackService } from '../services/feedback.service';
     'style': 'display: block;'
     },
     animations: [
-      flyInOut(),expand()
+      flyInOut(),visibility(),expand()
     ]
 })
 export class ContactComponent implements OnInit {
@@ -21,6 +22,9 @@ export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
+  feedbackcopy:string;
+  visibility = 'shown';
+  errMess:string;
   
 
   formErrors = {
@@ -99,8 +103,10 @@ export class ContactComponent implements OnInit {
     this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
     this.feedbackservice.submitFeedback(this.feedback)
-      .subscribe(feedback => {this.feedback;
-      }, errmess => {this.feedback = errmess});
+      .subscribe(feedback => {this.feedback;this.feedbackcopy=feedback;
+      },
+      errmess => { this.feedback = null; this.feedbackcopy = null; this.errMess = <any>errmess; });
+      console.log(this.feedbackcopy);
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
