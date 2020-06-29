@@ -14,7 +14,7 @@ import { visibility } from '../animations/app.animation';
     'style': 'display: block;'
     },
     animations: [
-      flyInOut(),visibility(),expand()
+      flyInOut(),expand()
     ]
 })
 export class ContactComponent implements OnInit {
@@ -22,7 +22,7 @@ export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
-  feedbackcopy:string;
+  loading=false;
   visibility = 'shown';
   errMess:string;
   
@@ -100,13 +100,17 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading=true;
     this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
     this.feedbackservice.submitFeedback(this.feedback)
-      .subscribe(feedback => {this.feedback;this.feedbackcopy=feedback;
+      .subscribe(feedback => {
+        this.feedback;
+        this.loading=false;
+        
+        setTimeout(()=>{
+          this.feedback=null;},5000);
       },
-      errmess => { this.feedback = null; this.feedbackcopy = null; this.errMess = <any>errmess; });
-      console.log(this.feedbackcopy);
+      errmess => {  this.loading=false;this.feedback = null; this.errMess = <any>errmess; });
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
