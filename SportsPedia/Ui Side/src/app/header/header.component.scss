@@ -1,7 +1,7 @@
-$lt-blue: #1b9bff;
+$lt-color:#009089;
 $background-dark: #512DA8;
 $background-light: #9575CD;
-$background-pale:#76C9F9;
+$background-pale:/*#4870C1*/#2f7175;
 $background-moredark: #4527A0;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
@@ -10,10 +10,10 @@ $background-moredark: #4527A0;
 }
 
 .active {
-    background: $lt-blue;
+    background: $background-pale;
 }
 .mat-toolbar{
-  background-color:$background-pale ;
+  background-color:$lt-color ;
   color:#fff;
   min-height: 80px;
 }
