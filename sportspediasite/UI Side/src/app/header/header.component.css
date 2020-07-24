@@ -1,0 +1,18 @@
+nav{
+    height: 60px;
+    background-color:#009089;
+    color:white;
+}
+h1{
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+.active{
+    color:black;
+}
+a{
+  font-size:large;
+  font-family: 'Times New Roman', Times, serif;
+
+}
