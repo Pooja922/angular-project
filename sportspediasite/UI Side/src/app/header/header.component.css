@@ -1,18 +1,20 @@
-nav{
-    height: 60px;
-    background-color:#009089;
-    color:white;
+.active{
+    color: #2f7175;
+}
+.mat-toolbar{
+  background-color:#009089 ;
+  color:#fff;
+  height: 80px;
 }
 h1{
-    font-weight: bolder;
-    font-size: xx-large;
-    font-family: 'Times New Roman', Times, serif;
-}
-.active{
-    color:black;
-}
-a{
-  font-size:large;
+  font-weight: bolder;
+  font-size: xx-large;
   font-family: 'Times New Roman', Times, serif;
-
 }
+
+a{
+  font-size: small;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
