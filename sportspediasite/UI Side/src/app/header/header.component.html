@@ -3,6 +3,6 @@
     <h1>SportsPedia</h1> 
   </div>
     <a mat-button routerLink='/home' routerLinkActive="active"><span class="active fa fa-lg fa-home">HOME</span></a>
-    <a mat-button ><span class="fa fa-lg fa-user-plus">SIGNUP</span></a>
-    <a mat-button ><span class="fa fa-lg fa-sign-in">LOGIN</span></a>
+    <a mat-button (click)="openSignupForm()"><span class="fa fa-lg fa-user-plus">SIGNUP</span></a>
+    <a mat-button (click)="openLoginForm()"><span class="fa fa-lg fa-sign-in">LOGIN</span></a>
 </mat-toolbar>
