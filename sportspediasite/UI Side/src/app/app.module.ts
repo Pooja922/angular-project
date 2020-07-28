@@ -21,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CricketService } from  './services/cricket.service';
+import { CricketComponent } from './cricket/cricket.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CricketComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,7 @@ import { SignupComponent } from './signup/signup.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CricketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
